@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #000000, #1e1e1f);
+  background: linear-gradient(to bottom, #e0b469, #866f47);
+
   color: #ffffff;
 }
 
@@ -19,19 +21,16 @@ html, body {
 }
 
 .main-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  
+  /* backdrop-filter: blur(10px); */
   border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); */
   width: 100%;
   max-width: 850px;
   box-sizing: border-box;
   padding: 20px;
   margin-bottom: 20px;
-
-  display: flex;
+  display: flex
+;
   flex-direction: column;
   gap: 20px;
 }
@@ -62,7 +61,7 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: 400px; 
+  height: 170px;
   overflow-y: auto;
 }
 
@@ -71,15 +70,15 @@ html, body {
   width: 8px;
 }
 .chat-container::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
 .chat-container::-webkit-scrollbar-thumb {
-  background: #7F5AF0;
+  background: rgb(65, 40, 16) !important;
   border-radius: 4px;
 }
 .chat-container::-webkit-scrollbar-thumb:hover {
-  background: #6b46d4;
+  background: #343435;
 }
 
 .message {
@@ -92,19 +91,6 @@ html, body {
   width: auto;
 }
 
-.user-message {
-  align-self: flex-end;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #ffffff;
-}
-
-.assistant-message {
-  align-self: flex-start;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: #ffffff;
-}
 
 /* Área do Prompt */
 .prompt-area {
@@ -128,9 +114,9 @@ html, body {
   flex: 1;
   border: none;
   border-right: 1px solid rgba(255,255,255,0.2);
-  background: transparent;
-  color: #fff;
-  
+  color: #CABBA0;
+  background: rgb(65, 40, 16);
+  color: rgb(255, 249, 224);
   /* Tentar centralizar verticalmente via line-height igual à altura */
   height: 50px;
   line-height: 50px;
@@ -149,8 +135,8 @@ html, body {
 }
 
 .prompt-area button {
-  background: #424242;
-  color: #fff;
+  background: rgb(255, 249, 224);
+  color:#8b4513;
   font-family: "Poppins";
   border: none;
   font-size: 1rem;
@@ -166,9 +152,6 @@ html, body {
   justify-content: center;
 }
 
-.prompt-area button:hover {
-  background: #3c3c3d;
-}
 
 @media (max-width: 850px) {
   .prompt-area button {
@@ -188,19 +171,19 @@ html, body {
 
 /* Mensagem do usuário (à direita) */
 .user-message {
-  align-self: flex-end;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  align-self: flex-end !important;
+    background: rgb(65, 40, 16) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #f5f5dc !important;
 }
 
-/* Mensagem da IA (à esquerda) */
 .assistant-message {
-  align-self: flex-start;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  align-self: flex-start !important;
+  background: rgb(65, 40, 16);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f5f5dc;
 }
+
 
 /* Mensagem de erro */
 .error-message {
@@ -259,4 +242,159 @@ video {
   50% {
     transform: scale(1.2);
   }
+}
+.fish-image {
+  width: 100%; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 15px; /* Arredondamento das bordas */
+}
+
+
+.fish-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px; /* Ajuste conforme necessário */
+  height: 300px; /* Ajuste conforme necessário */
+}
+
+.fish-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/videos/wooden-frame.jpg') no-repeat center center;
+  background-size: cover;
+  pointer-events: none; /* Garante que clique na imagem não interfira */
+}
+
+.fish-image {
+  width: 80%; /* Ajuste o tamanho da imagem dentro da moldura */
+  height: auto;
+  position: relative;
+  z-index: 1; /* Certifica que a imagem está acima da moldura */
+}
+.frame {
+  margin: 20px auto;
+  border: 20px solid #8b4513;
+  border-radius: 15px;
+  height: auto;
+  width: auto;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.border {
+  background: #f5f5dc;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  margin-top: 10px;
+  font-family: 'Playball', cursive;
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+}
+.frame-container {
+  width: 600px; /* Ajuste para a largura total desejada */
+  height: 400px; /* Ajuste para a altura total desejada */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  position: relative;
+}
+
+.outerBevel {
+  box-shadow: 4px 6px 12px 0 black;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(109, 84, 58) rgb(24, 19, 13) rgb(24, 19, 13) rgb(109, 84, 58);
+  width: 100%;
+  height: 100%;
+}
+
+.flatSurface {
+  border: 12px solid rgb(65, 40, 16);
+  width: calc(100% - 24px); /* Subtrai a largura do border */
+  height: calc(100% - 24px); /* Subtrai a altura do border */
+  margin: auto;
+}
+
+.innerBevel {
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(24, 19, 13) rgb(109, 84, 58) rgb(109, 84, 58) rgb(24, 19, 13);
+  width: calc(100% - 10px); /* Subtrai a largura do border */
+  height: calc(100% - 10px); /* Subtrai a altura do border */
+  margin: auto;
+}
+
+.map {
+  display: block;
+  clear: both;
+  height: 280px; /* Ajusta para caber dentro da moldura */
+  width: 90%; /* Ajusta para caber dentro da moldura */
+  padding: 5%;
+  background-color: rgb(255, 249, 224); /* Cor do fundo */
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgb(207, 166, 0) rgb(207, 166, 0) rgb(145, 110, 0) rgb(145, 110, 0);
+  margin: auto;
+}
+
+
+.buttons-area{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  bottom: 30px;
+}
+.buttons-area .itens{
+  display: flex;
+  align-items: center;
+}
+
+.buttons-area .item svg{
+  margin: 10px;
+  font-size: 40px;
+  color: rgb(65, 40, 16);
+}
+
+.tokenName{
+  color:rgb(65, 40, 16);
+  text-align: center;
+  height: 0;
+  font-family: "Quicksand";
+  letter-spacing: 2px;
+}
+
+
+.ca{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.ca button{
+  font-weight: 400;
+  border:rgb(109, 84, 58);
+  background:rgba(109, 84, 58, 0.4);
+  font-size: 17px;
+  color:#f5f5dc;
+  cursor: pointer;
+  font-family: "Poppins";
+  margin: 10px;
 }
