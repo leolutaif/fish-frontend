@@ -210,7 +210,7 @@ function App() {
       document.removeEventListener('click', handleClick);
     };
   }, []);
-  let text = "FaaATGZFZSJWS6MF5jKMhzgecnCuAS7LoVVDNtU7GCJ5"
+  let text = tokenCA;
   const shortText = `${text.slice(0, 3)}...${text.slice(-3)}`; // Formato abreviado
   return (
     <div className="page-container">
